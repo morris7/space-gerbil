@@ -60,6 +60,7 @@ function create() {
     // The player and its settings
     player = game.add.sprite(game.world.width/2-150, game.world.height/2-100, 'gerbil');
     player.scale.setTo(0.5, 0.5);
+    player.anchor.setTo(0.5, 0.5);
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -105,6 +106,11 @@ function update() {
         stars[i].scale.set(stars[i].perspective / 2);
         stars[i].rotation += 0.1;
 
+        if(i == 0){
+            player.angle += 1;
+        }
+
+
     }
 
 
@@ -141,6 +147,7 @@ function update() {
     {
         //  Stand still
         player.animations.stop();
+
 
         //player.frame = 4;
     }
